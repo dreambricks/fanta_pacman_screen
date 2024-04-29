@@ -294,7 +294,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -704.0003, y: 60}
+  m_AnchoredPosition: {x: -704.0004, y: 60}
   m_SizeDelta: {x: -1407.9994, y: -120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &924722589
@@ -346,8 +346,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idleScreen: {fileID: 8400000, guid: e860e56f6b6965b42bdc0e5f615b7525, type: 2}
   playingScreen: {fileID: 8400000, guid: c86be809224cfaf4a80a197de3dbbdee, type: 2}
-  endScreen: {fileID: 8400000, guid: cfe0f8783e28bd841b3c4f9f7ee736d8, type: 2}
-  vpEndScreen: {fileID: 1612894814}
   arduinoCommunication: {fileID: 1242754992}
 --- !u!1 &963194225
 GameObject:
@@ -675,7 +673,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139167327}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: dfb8ceaa9f656ae41b91a2feaec22c63, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 4b0320eb0b10f1a46bcf803570086c6e, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}

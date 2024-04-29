@@ -9,8 +9,6 @@ public class ScreenManager : MonoBehaviour
 {
     public Texture idleScreen;
     public Texture playingScreen;
-    public Texture endScreen;
-    public VideoPlayer vpEndScreen;
     private RawImage imagePanel;
 
 
@@ -20,30 +18,35 @@ public class ScreenManager : MonoBehaviour
     private void Start()
     {
         imagePanel = GetComponent<RawImage>();
+
+        // call this only to demo 
+        //Invoke(nameof(ToggleTexture), 10.0f);
     }
 
+    private void ToggleTexture()
+    {
+        if (imagePanel.texture != playingScreen) 
+        {
+            imagePanel.texture = playingScreen;
+        }
+        else
+        {
+            imagePanel.texture = idleScreen;
+        }
+        Invoke(nameof(ToggleTexture), 10.0f);
+    }
 
     private void Update()
     {
         string data = arduinoCommunication.GetLastestData();
 
-        if (data == "0")
+        if (data == "1")
         {
-            vpEndScreen.Play();
-            imagePanel.texture = endScreen;
-            Invoke(nameof(SetIdledScreen), 6.0f);
+            imagePanel.texture = idleScreen;
         }
-        else if (data == "1") 
+        else if (data == "2") 
         {
-            vpEndScreen.Stop();
-            vpEndScreen.Prepare();
             imagePanel.texture = playingScreen;
-
         }
-    }
-
-    private void SetIdledScreen()
-    {
-        imagePanel.texture = idleScreen;
     }
 }
